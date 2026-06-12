@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=320">
+  <link rel="stylesheet" href="popup.css">
+  <title>视频挂机防暂停</title>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <img src="../icons/icon48.png" alt="图标" class="header-icon">
+      <h1>视频挂机防暂停</h1>
+    </header>
+
+    <!-- 主开关 -->
+    <div class="card toggle-card">
+      <span class="toggle-label">防暂停模式</span>
+      <label class="switch">
+        <input type="checkbox" id="mainToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <!-- 模拟选项 -->
+    <div class="card">
+      <h2 class="card-title">模拟选项</h2>
+      <label class="checkbox-row">
+        <input type="checkbox" id="optMouseMove" checked>
+        <span>鼠标晃动</span>
+      </label>
+      <label class="checkbox-row">
+        <input type="checkbox" id="optPageScroll" checked>
+        <span>页面滚动</span>
+      </label>
+      <label class="checkbox-row">
+        <input type="checkbox" id="optClick">
+        <span>偶尔点击</span>
+      </label>
+      <label class="checkbox-row">
+        <input type="checkbox" id="optKeyboard">
+        <span>键盘活动</span>
+      </label>
+    </div>
+
+    <!-- 速度设置 -->
+    <div class="card">
+      <h2 class="card-title">模拟速度</h2>
+      <div class="radio-group">
+        <label class="radio-row">
+          <input type="radio" name="speed" value="slow">
+          <span>慢速</span>
+        </label>
+        <label class="radio-row">
+          <input type="radio" name="speed" value="medium" checked>
+          <span>中速</span>
+        </label>
+        <label class="radio-row">
+          <input type="radio" name="speed" value="fast">
+          <span>快速</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- 白名单 -->
+    <div class="card">
+      <h2 class="card-title">白名单模式</h2>
+      <div class="whitelist-toggle-row">
+        <span>仅在白名单网站生效</span>
+        <label class="switch switch-sm">
+          <input type="checkbox" id="whitelistToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="whitelist-input-row" id="whitelistSection" style="display:none;">
+        <input type="text" id="whitelistInput" placeholder="输入域名，如 youtube.com">
+        <button id="whitelistAddBtn" class="btn-add">添加</button>
+      </div>
+      <ul class="whitelist-list" id="whitelistList"></ul>
+      <p class="hint" id="whitelistHint" style="display:none;"></p>
+    </div>
+
+    <!-- 状态提示 -->
+    <div class="status-bar" id="statusBar">
+      <span id="statusText">已关闭</span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
